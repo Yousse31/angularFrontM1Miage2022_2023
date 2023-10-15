@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Assignment } from './assignments.model';
 
 @Component({
   selector: 'app-assignments',
@@ -7,23 +8,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssignmentsComponent implements OnInit {
   constructor() {}
-  titre = "Mon app de fou furieux"
-  assignments = [
+  titre = "Mon app de fou furieux";
+  ajoutActive = false;
+  nomDevoir:string = "";
+  assignments:Assignment[] = [
     {
       nom:"TP1 sur les components",
-      dateDeRendu: '2020-11-11',
+      dateDeRendu: new Date('2020-11-11'),
       rendu: true,
     },
     {
       nom:"TP2 enervé de fou",
-      dateDeRendu: '2020-12-02',
+      dateDeRendu: new Date('2020-12-02'),
       rendu: false,
     },
     {
       nom:"TP3 enervé, je pleure",
-      dateDeRendu: '2021-01-14',
+      dateDeRendu: new Date('2021-01-14'),
       rendu: true,
     }
   ];
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.ajoutActive = true;
+  }, 2000);
+}
+onSubmit() {
+  const newAssignment = new Assignment();
+  newAssignment.nom = this.nomDevoir;
+  newAssignment.dateDeRendu = this.dateDeRendu;
+  newAssignment.rendu = false;
+
+  this.assignments.push(newAssignment);
+//event.preventDefault();
+}
+
 }
