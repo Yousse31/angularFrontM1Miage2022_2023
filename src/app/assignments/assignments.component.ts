@@ -11,6 +11,7 @@ export class AssignmentsComponent implements OnInit {
   titre = "Mon app de fou furieux";
   ajoutActive = false;
   nomDevoir:string = "";
+  dateDeRendu:Date = new Date();
   assignments:Assignment[] = [
     {
       nom:"TP1 sur les components",
