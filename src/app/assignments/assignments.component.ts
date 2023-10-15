@@ -34,6 +34,7 @@ export class AssignmentsComponent implements OnInit {
       this.ajoutActive = true;
   }, 2000);
 }
+
 onSubmit() {
   const newAssignment = new Assignment();
   newAssignment.nom = this.nomDevoir;

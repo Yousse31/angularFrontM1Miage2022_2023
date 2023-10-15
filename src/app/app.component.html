@@ -1,3 +1,28 @@
+
+<mat-toolbar color="primary">
+  <button mat-button (click)="opened!=opened">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Youssef Ansari le bg</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="opened">
+    <a>Start</a>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    End
+    <button mat-button (click)="opened!=opened">Toggle</button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
 <H1>Hello World</H1>
 
 <button mat-button>Click</button>
